@@ -1,0 +1,5 @@
+---
+API_KEY   : ''
+API_HOST  : ''
+ST2_EVENT : 'st2_cmk.service_state_change'
+SSL_VERIFY: False

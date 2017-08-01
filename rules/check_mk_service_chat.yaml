@@ -1,0 +1,12 @@
+---
+name: notify_chat
+pack: st2_cmk
+description: Post to chat when cmk service state changes
+enabled: false
+trigger:
+  type: st2_cmk.service_state_change
+action:
+  ref: chatops.post_message
+  parameters:
+    message: CMK
+    channel: '#stackstorm'

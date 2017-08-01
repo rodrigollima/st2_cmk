@@ -1,0 +1,13 @@
+---
+ref: st2_cmk
+name: st2_cmk 
+description: A simple check_mk StackStorm event_handler integration.
+keywords:
+    - check_mk
+    - cmk
+    - monitoring
+    - alerting
+    - event
+version: 0.1.0
+author: Rodrigo Lima
+email: rodrigoxone@gmail.com

@@ -1,0 +1,4 @@
+---
+name: service_state_change
+pack: st2_cmk
+description: 'Trigger type for check_mk service state change event.'
