@@ -42,7 +42,7 @@ st2 pack install https://github.com/rodrigollima/st2_cmk.git
       }
       ```
 
-6. Enable global event and host handler 
+6. Enable check_mk event handler 
 
       edit
       
