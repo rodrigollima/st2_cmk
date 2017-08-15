@@ -38,7 +38,7 @@ st2 pack install https://github.com/rodrigollima/st2_cmk.git
       ``` 
       define command{
           command_name st2_event_handler
-          command_line python /omd/sites/aws/local/share/check_mk/notifications/st2_cmk.py /etc/st2_cmk.yaml "$SERVICEEVENTID$" "$SERVICEDESC$" "$SERVICESTATE$" "$SERVICESTATEID$" "$SERVICESTATETYPE$" "$SERVICEATTEMPT$" "$HOSTNAME$" "$SERVICEOUTPUT$"
+          command_line python /omd/sites/aws/local/share/check_mk/notifications/st2_cmk.py /etc/st2_cmk.yaml "$SERVICEEVENTID$" "$SERVICEDESC$" "$SERVICESTATE$" "$SERVICESTATEID$" "$SERVICESTATETYPE$" "$SERVICEATTEMPT$" "$HOSTNAME$" "$SERVICEDESC$ $SERVICEOUTPUT$"
       }
       ```
 
