@@ -37,7 +37,30 @@ st2 pack install https://github.com/rodrigollima/st2_cmk.git
 
       ``` 
       define command{
-          command_name run_event_handler
-          command_line python /omd/sites/aws/local/share/check_mk/notifications/st2_cmk.py /etc/st2_cmk.yaml $SERVICEEVENTID$ "$SERVICEDESC$" $SERVICESTATE$ $SERVICESTATEID$ $SERVICESTATETYPE$ $SERVICEATTEMPT$ $HOSTNAME$ $SERVICEOUTPUT$
+          command_name st2_event_handler
+          command_line python /omd/sites/aws/local/share/check_mk/notifications/st2_cmk.py /etc/st2_cmk.yaml "$SERVICEEVENTID$" "$SERVICEDESC$" "$SERVICESTATE$" "$SERVICESTATEID$" "$SERVICESTATETYPE$" "$SERVICEATTEMPT$" "$HOSTNAME$" "$SERVICEOUTPUT$"
       }
       ```
+
+6. Enable global event and host handler 
+
+      edit
+      
+      ``` vim /omd/sites/<master>/etc/check_mk/main.mk ```
+
+      add
+
+      ```
+      extra_service_conf["event_handler_enabled"]=[("1", ALL_HOSTS, ALL_SERVICES)]
+      extra_service_conf["event_handler"]=[("run_event_handler",ALL_HOSTS,ALL_SERVICES)]
+      ```
+
+      restart
+
+      ``` cmk -O ```
+
+      monitoring
+
+      ``` tail -f  /omd/sites/<master>/var/log/nagios.log ```
+
+      
