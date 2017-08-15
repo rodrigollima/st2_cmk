@@ -52,7 +52,7 @@ st2 pack install https://github.com/rodrigollima/st2_cmk.git
 
       ```
       extra_service_conf["event_handler_enabled"]=[("1", ALL_HOSTS, ALL_SERVICES)]
-      extra_service_conf["event_handler"]=[("run_event_handler",ALL_HOSTS,ALL_SERVICES)]
+      extra_service_conf["event_handler"]=[("st2_event_handler",ALL_HOSTS,ALL_SERVICES)]
       ```
 
       restart
